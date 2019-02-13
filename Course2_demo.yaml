@@ -1,0 +1,61 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: A CloudFormation Template designed for Ascending AWS Certified Developer Course Homework 2
+Parameters:
+  VpcId:
+    Type: AWS::EC2::VPC::Id
+    Description: Select a VPC
+    MinLength: 1
+  SubnetId:
+    Type: AWS::EC2::Subnet::Id
+    Description: Select a Subnet. By default, all subnets are public.
+    MinLength: 1
+  KeyName:
+    Type: AWS::EC2::KeyPair::KeyName
+    Description: Select an EC2 Key Pair Name, create one if you don't have it.
+    MinLength: 1
+Mappings:
+  RegionMap:
+    us-east-1:
+      ami: ami-009d6802948d06e52
+    us-east-2:
+      ami: ami-02e680c4540db351e
+Resources:
+  SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: This Security Group is created for tutorial purpose
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          CidrIp: 0.0.0.0/0
+          FromPort: 22
+          ToPort: 22
+        - IpProtocol: tcp
+          CidrIp: 0.0.0.0/0
+          FromPort: 80
+          ToPort: 80
+        - IpProtocol: tcp
+          CidrIp: 0.0.0.0/0
+          FromPort: 443
+          ToPort: 443
+      VpcId: !Ref VpcId
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !FindInMap [RegionMap, !Ref "AWS::Region", ami]
+      InstanceType: t2.micro
+      KeyName: !Ref KeyName
+      SecurityGroupIds: 
+        - !Ref SecurityGroup
+      SubnetId: !Ref SubnetId
+      UserData:
+        Fn::Base64:
+          !Sub |
+            #!/bin/bash -xe
+            yum update -y
+            yum install -y httpd
+            service httpd start
+Outputs:
+  PublicIp:
+    Description: public IP address of EC2 Instance
+    Value: !GetAtt EC2Instance.PublicIp
