@@ -121,8 +121,137 @@ What should be done to meet these requirements?
 	3. Create an IAM user. Ensure the IAM user has access to the S3 bucket via IAM policies. Embed the Access keys to the program.
 	4. Create an IAM user. Ensure the IAM user has access to the S3 bucket via IAM policies. Embed the Access keys as environment variables for the Instance.
 
+21. You’ve setup an application on a set of EC2 Instances. It is a web-based application. You’ve also setup a load balancer. During the initial round of testing after deploying, the users complain that they are not able to reach the home page for the web based application. Which of the following must you check? Choose 2 answers from the options given below
+	1. Ensure that the load balancer is attached to a private subnet
+	2. Ensure that the load balancer is attached to a public subnet
+	3. Ensure that the Security Group of the Load balancer allows traffic from the internet
+	4. Ensure that the Security Group of the EC2 allows traffic from the internet
+
+22. Your team has developed an application that will be launched on EC2 Instances that are part of the an Autoscaling Group. It needs to be ensured that the application can get the IP address of the Instance. How can you achieve this?
+	1. Make the application query the Instance Metadata
+	2. Make the application query the Instance Userdata
+	4. Make the application query the Autoscaling Group
+	5. Make the application query the Launch configuration
+
+23. You’re in charge for creating a cloudformation template. This template needs to create resources for multiple types of environment. The template needs to be flexible so that it can create resources based on the type of environment. How can you achieve this? Choose 2 answers from the options given below.
+	1. Create an Input Parameter to take in the type of environment.
+	2. Use the Outputs section to define the type of environment
+	3. Use the Custom Resources feature to create resources based on the type of environment
+	4. Use the Conditions section to create resources based on the type of environment
+
+24. Your company has a development application that needs to interact with an S3 bucket. There is a requirement that all data in the bucket is encrypted at rest. You also need to ensure that the keys are managed by you. Which of the following can you use for this purpose? Choose 2 answers from the options given below
+	1. Server-Side Encryption with AWS Managed Keys
+	2. Server-Side Encryption with AWS KMS Keys
+	3. Server-Side Encryption with Customer-Provided Keys
+	4. Client-Side Encryption
+
+25. You are setting out policies for allowing access to users for objects in an S3 bucket. You have configured a policy for testing which currently works as intended. You try to create a more restrictive policy but find out that the changes are not working as intended. What can you do to resolve the issue in the EASIEST way possible?
+	1. Delete the current version of the policy and recreate the older one
+	2. Revert back to the previous version of the policy
+	3. Recreate the IAM users again
+	4. Use the recycle bin to get the deleted policies back
+
+26. You are using a custom tool known as POSTMAN to make API requests to resources in AWS. Part of the job of sending requests is to sign the request. Which of the following would you use to sign the API requests made to AWS?
+	1. Your user name and password
+	2. A private key file
+	3. KMS keys
+	4. Access Keys
+
+27. An application consists of an Autoscaling Group. It has been determined that the best way to scale the group is based on the number of concurrent users. How can you achieve this?
+	1. Create a tag for the Group to contain the number of concurrent users
+	2. Create a custom metric for the number of concurrent users
+	3. Since concurrent user metrics are not available, base the scaling of the group on CPU percentage
+	4. Since concurrent user metrics are not available, base the scaling of the group on Memory percentage
+
+28. As a developer, you need your operations team to monitor a set of metrics for an on-promise application. They also need to be notified in case any of the metrics crosses the threshold. How can you achieve this?
+	1. Publish custom metrics for the application that can be monitored via Cloudwatch. Create Alarms for notifications.
+	2. Ask the System administrators to monitor the Cloudwatch logs
+	3. Ask the System administrators to monitor the Cloudtrail logs
+	4. Use the inbuilt metrics for Cloudwatch. Create Alarms for notifications.
+
+29. In regards to their data consistency model, AWS states that "Amazon S3 buckets in all Regions provide read-after-write consistency for PUTS of new objects and eventual consistency for overwrite PUTS and DELETES." What does AWS actually mean when they say Read-after-write consistency for PUTS of new objects? Choose the correct answer from the options below
+	1. If you write a new key to S3, you will be able to retrieve any object immediately afterwards. Also, any newly created object or file will be visible immediately, without any delay.
+	2. If you write a new key to S3, a subsequent read might return the old data or the updated data. Your applications should be built with this uncertainty in mind.
+	3. If you write a new key to S3, it may write corrupted or partial data.
+	4. You cannot write a new key to S3 unless there has been a read done prior to the write
+
+30. How much data can be stored in S3? Choose the correct answer from the options below
+	1. 500 TB
+	2. 500 GB
+	3. 5GB
+	4. No limits to the amount of data
+
+31. EC2 instances are launched from Amazon Machine Images (AMIs). Which of the below options are true for a given public AMI.
+	1. can only be used to launch EC2 instances in the same AWS availability zone as the AMI is stored
+	2. can only be used to launch EC2 instances in the same country as the AMI is stored
+	3. can be used to launch EC2 instances in any AWS region
+	4. can only be used to launch EC2 instances in the same AWS region as the AMI is stored
+
+32. After having created a new Linux instance on Amazon EC2, and downloaded the .pem file (called file.pem) you try and SSH into your IP address (52.2.222.22) using the following command.
+	ssh -i file.pem ec2-user@52.2.222.22
+However you receive the following error.
+WARNING: UNPROTECTED PRIVATE KEY FILE!
+What is the most probable reason for this and how can you fix it?
+	1. You do not have root access on your terminal and need to use the sudo option for this to work as follows. "sudo ssh -i LAfile.pem ec2-user@52.2.222.22"
+	2. Your key file must not be publicly viewable for SSH to work. You need to modify your pem file as follows "chmod 400 LAfile.pem"
+	3. Your key file is not encrypted. You need to use the -u option for unencypted not the -i option as follows. "ssh -u LAfile.pem ec2-user@52.2.222.22"
+	4. Your key file does not have the correct permissions for you to run the command. You need to modify your pem file as follows "chmod 644 LAfile.pem"
+
+33. Which of the following request headers, when specified in an API call, will cause an object to be SSE-S3? Choose the correct answer from the options below
+	1. AES256
+	2. amz-server-side-encryption
+	3. x-amz-server-side-encryption
+	4. server-side-encryption
+
+34. What result would you expect from the Fn::Join function in the following line in a CloudFormation template? Choose an answer from the options below
+	"Fn::Join" : [ "/", [ "list-a","list-b","list-c"] ]
+	1. lista-listb-listc
+	2. list-c/list-b/list-a
+	3. list-a:list-b:list-c
+	4. list-a/list-b/list-c
+
+35. Fn:GetAtt is used on a CloudFormation template to: Choose an answer from the options below
+	1. Conditionally create stack resources
+	2. Return the value of an attribute from a resource on the template
+	3. Appends a set of values into a single value which can include resources on the template
+	4. Returns the value corresponding to keys into a two-level map declared in the mappings section
+
+36. By default, what event occurs if your CloudFormation receives an error during creation? Choose a correct answer from the options below
+	1. DELETE_IN_PROGRESS
+	2. ROLLBACK_IN_PROGRESS
+	3. DELETE_COMPLETE
+	4. CREATION_IN_PROGRESS
+
+37. Which of the following AWS services can be used to record logs of all AWS API calls. Choose an answer from the options below
+	1. AWS IAM
+	2. Amazon Cloudwatch
+	3. Amazon EC2
+	4. AWS CloudTrail
+
+38. Which of the following items are required to allow an application deployed on an EC2 instance to publish metrics to CloudWatch? Assume that no security Keys are allowed to be stored on the EC2 instance. Choose an answer from options below:
+	1. Create an IAM user that allows write access to CloudWatch
+	2. Launch an EC2 instance with the IAM user included in the launch configuration.
+	3. Create an IAM role that allows write access to CloudWatch and attach to the instance.
+	4. Create an IAM user and allow programmatic access.
+
+39. Which of the following are the responsibility of AWS. Choose 2 answers from the options below
+	1. Virtualization Infrastructure
+	2. Managing security groups
+	3. Physical security of AWS data centers
+	4. Patching the OS on the running EC2 instance
+
+40. What is required for a subnet to control the flow of traffic in a subnet? Choose one answer from the options below
+	1. Route table
+	2. Subnet table
+	3. VPC table
+	4. Route53
+
 
 32233
 13143
 33112
 23212
+(23)1(14)(34)2
+42114
+42342
+243(13)1
