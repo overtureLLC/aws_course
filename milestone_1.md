@@ -245,13 +245,3 @@ What is the most probable reason for this and how can you fix it?
 	2. Subnet table
 	3. VPC table
 	4. Route53
-
-
-32233
-13143
-33112
-23212
-(23)1(14)(34)2
-42114
-42342
-243(13)1
