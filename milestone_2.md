@@ -121,6 +121,11 @@ Which of the following would you consider as part of the development process for
 	4. None above
 
 20. A company is planning on developing an application that is going to make use of a DynamoDB table. The structure of the table is given below
+Which of the following should be chosen as the partition key to ensure the MOST effective distribution of keys?
+	1. Product ID
+	2. Review ID
+	3. Product Name
+	4. Production Description
 
 Attribute Name | Type | Description
 -------------- | ---- | -----------
@@ -128,10 +133,4 @@ Product ID | Number | ID of product
 Review ID | Number | Automatically generated GUID
 Product Name | String | Name of the product
 Product Description | String | Description of the product
-
-Which of the following should be chosen as the partition key to ensure the MOST effective distribution of keys?
-	1. Product ID
-	2. Review ID
-	3. Product Name
-	4. Production Description
 
