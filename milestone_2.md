@@ -171,6 +171,12 @@ Product Description | String | Description of the product
 	4. Enable support for binary payloads
 
 27. An application is making a request to AWS STS for temporary access credentials. Below is the response being received
+Which of the following is TRUE with regards to the above response?
+	1. The  SecretAccessKey can be used like Access keys to make request to resources
+	2. The user will assume the role of arn:aws:sts::123456789012:assumed-role/demo/lambda
+	3. The session token will be valid for the lifetime of the application
+	4. The Request ID can be used to make requests to access other AWS resources
+
 ```xml
 <AssumeRoleResponse xmlns="https://sts.amazonaws.com/doc/2011-06-15/">
 	<AssumeRoleResult>
@@ -211,8 +217,3 @@ Product Description | String | Description of the product
 	</ResponseMetadata>
 </AssumeRoleResponse>
 ```
-Which of the following is TRUE with regards to the above response?
-	1. The  SecretAccessKey can be used like Access keys to make request to resources
-	2. The user will assume the role of arn:aws:sts::123456789012:assumed-role/demo/lambda
-	3. The session token will be valid for the lifetime of the application
-	4. The Request ID can be used to make requests to access other AWS resources
