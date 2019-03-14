@@ -46,3 +46,14 @@
 	3. Enable client-side encryption for Kinesis streams
 	4. Use the AWS CLI to encrypt the data
 
+9. Your company has a large set of data sets that need to be streamed directly into Amazon S3. Which of the following would be perfect for such a requirement?
+	1. Kinesis Streams
+	2. Kinesis Data Firehose
+	3. AWS Redshift
+	4. AWS DynamoDB
+
+10. You just developed code in AWS Lambda that makes use of recursive functions. After several invocations, you are beginning to see throttling errors in the metrics. Which of the following should be done to resolve this issue?
+	1. Place the recursive function in a separate package
+	2. Use versioning for the recursive function
+	3. Avoid using recursive code altogether
+	4. Use the API gateway to call the recursive code.

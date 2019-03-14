@@ -134,3 +134,85 @@ Review ID | Number | Automatically generated GUID
 Product Name | String | Name of the product
 Product Description | String | Description of the product
 
+21. A company is planning on using DynamoDB as their data store. The tables in DynamoDB will be receiving millions of requests. Which of the following can be used to ensure the latency of requests to the DynamoDB table is kept at a minimal?
+	1. Createa read replica of the DynamoDB table
+	2. Enable Multi-AZ for the DynamoDB table
+	3. Enable DynamoDB Accelerator
+	4. Enable Encryption for the DynamoDB table
+
+22. You’ve developed a Lambda function and are now in the process of debugging it. You add the necessary print statements in the code to assist in the debugging. You go to Cloudwatch logs , but you see no logs for the lambda function. Which of the following could be the underlying issue for this?
+	1. You’ve not enabled versioning for the Lambda function
+	2. The IAM Role assigned to the Lambda function does not have the necessary permission to create Logs
+	3. There is not enough memory assigned to the function
+	4. There is not enough time assigned to the function
+
+23. Your team is developing a solution that will make use of DynamoDB tables. Due to the nature of the application, the data is needed across a couple of regions across the world. Which of the following would help reduce the latency of requests to DynamoDB from different regions?
+	1. Enable Multi-AZ for the DynamoDB table
+	2. Enable global tables for DynamoDB
+	3. Enable Indexes for the table
+	4. Increase the read and write throughput for the table
+
+24. Your application is developed to pick up metrics from several servers and push them off to Cloudwatch. At times , the application gets client 429 errors. Which of the following can be done from the programming side to resolve such errors?
+	1. Use the AWS CLI instead of the SDK to push the metrics
+	2. Ensure that all metrics have a timestamp before sending them across
+	3. Use exponential backoff in your requests
+	4. Enable encryption for the requests
+
+25. As a developer you have been told to create an API gateway stage that will directly interact with DynamoDB tables. Which of the following feature of the API Gateway must be used to fulfill this requirement?
+	1. Ensure to create an Integration request
+	2. Ensure to enable CORS
+	3. Ensure to enable DAX
+	4. Enable Binary payloads
+
+26. You have recently developed an AWS Lambda function to be used as a backend technology for API gateway. You need to give the API gateway URL to a set of users for testing. What must be done before the users can test the API?
+	1. Ensure that a deployment is created in the API gateway
+	2. Ensure that CORS is enabled for the API gateway
+	3. Generate the SDK for the API
+	4. Enable support for binary payloads
+
+27. An application is making a request to AWS STS for temporary access credentials. Below is the response being received
+```xml
+<AssumeRoleResponse xmlns="https://sts.amazonaws.com/doc/2011-06-15/">
+	<AssumeRoleResult>
+		<Credentials>
+  			<SessionToken>
+   				AQoDYXdzEPT//////////wEXAMPLEtc764bNrC9SAPBSM22wDOk4x4HIZ8j4FZTwdQW
+   				LWsKWHGBuFqwAeMicRXmxfpSPfIeoIYRqTflfKD8YUuwthAx7mSEI/qkPpKPi/kMcGd
+   				QrmGdeehM4IC1NtBmUpp2wUE8phUZampKsburEDy0KPkyQDYwT7WZ0wq5VSXDvp75YU
+   				9HFvlRd8Tx6q6fE8YQcHNVXAkiY9q6d+xo0rKwT38xVqr7ZD0u0iPPkUL64lIZbqBAz
+   				+scqKmlzm8FDrypNC9Yjc8fPOLn9FX9KSYvKTr4rvx3iSIlTJabIQwj2ICCR/oLxBA==
+  			</SessionToken>
+  			<SecretAccessKey>
+   				wJalrXUtnFEMI/K7MDENG/bPxRfiCYzEXAMPLEKEY
+  			</SecretAccessKey>
+  			<Expiration>
+  				2011-07-15T23:28:33.359Z
+  			</Expiration>
+  			<AccessKeyId>
+  				AKIAIOSFODNN7EXAMPLE
+  			</AccessKeyId>
+		</Credentials>
+		<AssumedRoleUser>
+  			<Arn>
+  				arn:aws:sts::123456789012:assumed-role/demo/lambda
+  			</Arn>
+  			<AssumedRoleId>
+  				ARO123EXAMPLE123:lambda
+  			</AssumedRoleId>
+		</AssumedRoleUser>
+		<PackedPolicySize>
+			6
+		</PackedPolicySize>
+	</AssumeRoleResult>
+	<ResponseMetadata>
+		<RequestId>
+			c6104cbe-af31-11e0-8154-cbc7ccf896c7
+		</RequestId>
+	</ResponseMetadata>
+</AssumeRoleResponse>
+```
+Which of the following is TRUE with regards to the above response?
+	1. The  SecretAccessKey can be used like Access keys to make request to resources
+	2. The user will assume the role of arn:aws:sts::123456789012:assumed-role/demo/lambda
+	3. The session token will be valid for the lifetime of the application
+	4. The Request ID can be used to make requests to access other AWS resources
