@@ -217,3 +217,46 @@ Which of the following is TRUE with regards to the above response?
 	</ResponseMetadata>
 </AssumeRoleResponse>
 ```
+
+28. You have an application that is hosted on an EC2 Instance. This application is part of a custom domain (www.demo.com). The application has been changed to make calls to the API gateway. But the browser is not rendering the responses and Javascript errors are being seen in the developer console. What must be done to ensure that this issue can be resolved?
+	1. Make the application call a Lambda function instead.
+	2. There is an issue with the stage defined on the API gateway, hence define a new stage
+	3. Make use of Cognito user pools
+	4. Enable CORS for the API gateway
+
+29. You’re developing an application that is going to be hosted in AWS Lambda. The function will make calls to a database. The security mandate is that all connection strings should be kept secure. Which of the following is the MOST secure way to implement this?
+	1. Use Lambda Environment variables
+	2. Put the database connection string in the app.json file
+	3. Put the database connection string in AWS Systems Manager Parameter Store
+	4. Place the database connection string in the AWS Lambda function itself since all lambda functions are encrypted at rest
+
+30. Your team needs to create a custom Elastic Beanstalk environment. The application requires an instance that needs a lot of custom software installed. Which of the following is the ideal way to prepare this environment?
+	1. Ensure that you choose a Web server environment
+	2. Ensure that you choose a Worker environment
+	3. Create multiple environments
+	4. Create a custom AMI
+
+31. You’re developing an application that will need to do the following: Upload images via a front end from users, store the images in S3, add the location of the images to a DynamoDB table, Which of the following two options would be part of the implementation process?
+	1. Add a Lambda function which would respond to events in S3
+	2. Add a message to an SQS queue after the object is inserted into the bucket.
+	3. Ensure that the Lambda function has access to the DynamoDB table
+	4. Ensure that the SQS service has access to the DynamoDB table
+
+32. You are planning on using the Serverless Application Model to deploy a Lambda function. Below is a normal construct for the template to be used.
+Where would the code base for the CodeUri normally point to?
+	1. The code as a zip package in Amazon Glacier
+	2. The code as a zip package in Amazon EBS Volumes
+	3. The code as a zip package in Amazon S3
+	4. The code as a zip package in Amazon Config
+
+```yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  PutFunction:
+  Type: AWS::Serverless::Function
+        Properties:
+           Handler: index.handler
+           Runtime: nodejs6.10
+           CodeUri:
+```

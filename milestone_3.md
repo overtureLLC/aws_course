@@ -57,3 +57,34 @@
 	2. Use versioning for the recursive function
 	3. Avoid using recursive code altogether
 	4. Use the API gateway to call the recursive code.
+
+11. Your team has developed an application that makes use of AWS resources. In order to provide frequent releases to the customer, you are required to automate the CI/CD process. Which of the following can be used for this purpose?
+	1. Create a Pipeline using AWS CodePipeline. Configure a stage for Unit testing as well in the Pipeline.
+	2. Use AWS CodeCommit to host your code repository. Use the build tool in AWS CodeCommit to build your pipeline
+	3. Create a Pipeline in the AWS CodeBuild Service
+	4. Create a Pipeline in the AWS CodeStar service
+
+12. Your company is planning on storing documents in an S3 bucket. The documents are sensitive, and employees should use Multi Factor authentication when trying to access documents. Which of the following must be done to fulfil this requirement?
+	1. Ensure that Encryption is enabled the bucket AWS server-side encryption
+	2. Ensure that Encryption is enabled the bucket using KMS keys
+	3. Ensure that the a bucket policy is in place with a condition of "aws:MultiFactorAuthPresent":"false" with a Deny policy
+	4. Ensure that the a bucket policy is in place with a condition of "aws:MultiFactorAuthPresent":"true" with a Deny policy
+
+13. You are developing an application that is going to make use of Docker containers. You need to use an orchestration service on the AWS Cloud for managing the application. Which of the following service would you use for this purpose?
+	1. AWS Code Deploy
+	2. AWS ECS
+	3. AWS SQS
+	
+	4. AWS Cloudfront
+
+14. Your team lead has finished creating a build project in the console. You have access to run the build but not to access the project. You want to specify a different source location for the build. How can you achieve this?
+	1. Issue the update project command and specify the new location of the build
+	2. Specify the new location of the build in the buildspec.yml file and issue the update-project command
+	3. Specify the new location of the build in the buildspec.yml file and use the start-build command
+	4. Specify the new location of the build in the buildspec.yml file and use the update-build command
+
+15. Your company has a set of EC2 Instances and On-premise. They now want to automate the deployment of their applications using the AWS Code Deploy tool in AWS. Which of the following is not a TRUE complete requirement that needs to be fulfilled for preparation of the servers?
+	1. Ensure both EC2 Instances and On-premise servers have the Code Deploy agent installed
+	2. Ensure both EC2 Instances and On-premise servers can connect to the Code Deploy service
+	3. Ensure both EC2 Instances and On-premise servers are tagged
+	4. Ensure both EC2 Instances and On-premise servers have instance profile attached to them
