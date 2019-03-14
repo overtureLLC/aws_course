@@ -260,3 +260,71 @@ Resources:
            Runtime: nodejs6.10
            CodeUri:
 ```
+
+33. Your development team is planning on using AWS ElastiCache – Redis for their caching implementation. It needs to be ensured that data is only filled in the cache when it is required. Which of the following cache strategy can be used for this purpose?
+	1. Lazy loading
+	2. Write through
+	3. Adding a TTL
+	4. Use Redis AOF
+
+34. Your team has an application deployed using the Elastic Beanstalk service. A Web environment has been configured for the production environment. There is now a requirement to perform a Blue Green deployment for a new version of the application. How can you achieve this?
+	1. Create a new application and swap the application environments.
+	2. Create a new application version and upload the new application version
+	3. Create a new environment in the application with the updated application version and perform a swap
+	4. Create a new environment in the application and Load the configuration of an existing environment
+
+35. Your team has an application deployed on the AWS platform. This application is making requests to an S3 bucket. There is a surge of increased number of GET requests. After monitoring using Cloudwatch metrics you can see the rate of GET requests going close to 5000 requests per second. Which of the following can be used to ensure the performance and cost are optimized?
+	1. Add an Elasticache in front of the S3 bucket
+	2. Use DynamoDB instead of using S3
+	3. Place a Cloudfront distribution in front of the S3 bucket
+	4. Place an Elastic Load balancer in front of the S3 bucket
+
+36. Your team is working on an application that will connect to a MySQL RDS Instance.  The security mandate is that the connection to the database from the application should be encrypted.  How can you accomplish this?
+	1. By using Access Keys assigned to an IAM user
+	2. By using Private Key pairs
+	3. By using SSL
+	4. By using KMS Keys
+
+37. You are planning on developing and deploying a Node.js Lambda function. The code has a dependency on a lot of third-party libraries. Which of the following needs to be done to ensure the code can be executed in the AWS Lambda service?
+	1. Install the third-party libraries in the Lambda service
+	2. Create a deployment package with your code and the third-party libraries
+	3. Use Cloudformation templates to deploy the third-party libraries
+	4. Use an IAM Role with the required permissions on those libraries
+
+38. A company has an application that is making use of a DynamoDB table. There is now a requirement to ensure that all changes to the items in the table are recorded and stored in a MySQL database. Which of the following would ideally be one of the implementation steps?
+	1. Enable DynamoDB Accelerator
+	2. Enable DynamoDB global tables
+	3. Enable DynamoDB streams
+	4. Enable DynamoDB triggers
+
+39. You have developed a Lambda function. This function needs to run on a scheduled basis. Which of the following can be done to accomplish this requirement in an ideal manner?
+	1. Use the schedule service in AWS Lambda
+	2. Use an EC2 Instance to schedule the Lambda invocation
+	3. Use Cloudwatch events to schedule the Lambda function
+	4. Use Cloudtrail to schedule the Lambda function
+
+40. Which of the descriptions below best describes what the following bucket policy does?
+Choose the correct answer from the options below
+	1. It allows read and write access to bucket 'mybucket'.
+	2. It allows read access to bucket 'mybucket' but only if it is accessed from www.example.com or www.demo.com.
+	3. It allows read access to bucket 'mybucket' for all requests.
+	4. It allows read or write access to bucket 'mybucket' but only if it is accessed from www.example.com or www.demo.com.
+
+```json
+{
+   "Version":"2012-10-17",
+   "Id":"Statement1",
+   "Statement":[
+    {
+       "Sid":" Statement2",
+       "Effect":"Allow",
+       "Principal":"*",
+       "Action":"s3:GetObject",
+       "Resource":"arn:AWS:s3:::mybucket/*",
+       "Condition":{
+             "StringLike":{"AWS:Referer":["http://www.example.com/*","http://www.demo.com/*"]}
+        }
+   }
+  ]
+}
+``` 
